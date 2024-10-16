@@ -2,15 +2,16 @@ import React from "react";
 import { SquarePen, Bell, User } from 'lucide-react';
 import styles from './Common.module.css'
 import Input from "./Input";
+import { Link, useNavigate } from "react-router-dom";
 import communityLogo from "../../assets/images/gaming-community-logo.png";
 
 const Header = ({ profilePicURL, username }) => {
     return (
         <header className={styles.header}>
             {/* Logo */}
-            <div className={styles.logo}>
+            <Link to="/dashboard" className={styles.logo}>
                 <img src={communityLogo} alt="Logo" className={styles.logoImage} />
-            </div>
+            </Link>
 
             {/* Search bar */}
             <div className={styles.searchContainer}>
