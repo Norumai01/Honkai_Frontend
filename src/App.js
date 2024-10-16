@@ -1,7 +1,7 @@
 import React from "react";
 import AuthPage from "./components/Auth/AuthPage";
 import Dashboard from "./components/Social_Hub/Dashboard";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate, replace } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
@@ -12,14 +12,32 @@ const theme = extendTheme({
   },
 });
 
+// Redirect any users already logged in, into social hub.
+const PublicRoute = ({ children }) => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user) {
+    return <Navigate to="/dashboard" replace />;
+  }
+  return children;
+};
+
+// Redirect any users not logged in, to login page.
+const ProtectedRoute = ({ children }) => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (!user) {
+    return <Navigate to="/" replace />;
+  }
+  return children;
+};
+
 function App() {
   return (
     <ChakraProvider theme={theme} resetCSS={false}>
       <Router>
         <div className="App">
           <Routes>
-            <Route path="/" element={<AuthPage />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<PublicRoute> <AuthPage /> </PublicRoute>} />
+            <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
           </Routes>
         </div>
       </Router>

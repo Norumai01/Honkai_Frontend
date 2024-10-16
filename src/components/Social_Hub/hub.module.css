@@ -1,4 +1,14 @@
+/* Dashboard */
+
 .dashboard {
+    background: linear-gradient(to bottom, #000000, #202020);
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+.userprofile {
     background: linear-gradient(to bottom, #000000, #202020);
     width: 100%;
     min-height: 100vh;

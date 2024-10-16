@@ -16,11 +16,10 @@ const Dashboard = () => {
 
     // Prevent rendering content if no user.
     if (!user) return null; 
-
     
     return (
         <div className={styles.dashboard}>
-            <Header profilePicURL={user?.profilePictureURL} username={user?.username}/>
+            <Header />
 
             <h1>Welcome to the Dashboard, {user?.username}!</h1>
             <p>Your email is: {user?.email}</p>

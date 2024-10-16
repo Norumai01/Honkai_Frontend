@@ -6,12 +6,17 @@ import { Link, useNavigate } from "react-router-dom";
 import communityLogo from "../../assets/images/gaming-community-logo.png";
 import { Menu, MenuButton, MenuList, MenuItem, Button, Box, Flex, Text } from "@chakra-ui/react";
 
-const Header = ({ profilePicURL, username }) => {
+const Header = () => {
     const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const handleLogout = () => {
         localStorage.removeItem('user');
         navigate('/');
+    }
+
+    const handleProfileClick = () => {
+        navigate(`/profile/${user.id}`);
     }
     
     return (
@@ -34,17 +39,17 @@ const Header = ({ profilePicURL, username }) => {
                     <MenuButton as={Button} className={styles.menuButton}>
                         <Flex align="center" gap="10px">
                             <Box className={styles.userIcon}>
-                                {profilePicURL ? (
-                                    <img src={profilePicURL} alt={`${username}'s profile`} className={styles.profilePic} />
+                                {user.profilePictureURL ? (
+                                    <img src={user?.profilePictureURL} alt={`${user?.username}'s profile`} className={styles.profilePic} />
                                 ) : (
                                     <User size={25} />
                                 )}
                             </Box>
-                            <Text className={styles.username}>{username}</Text>
+                            <Text className={styles.username}>{user?.username}</Text>
                         </Flex>
                     </MenuButton>
                     <MenuList className={styles.menuList}>
-                        <MenuItem className={styles.menuItem}>
+                        <MenuItem className={styles.menuItem} onClick={handleProfileClick}>
                             <Flex align="center">
                                 <User size={20} />
                                 <Text className={styles.menuItemText}>Profile</Text>
