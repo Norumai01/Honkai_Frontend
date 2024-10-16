@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.3);
 }
 
 .logoImage {
@@ -119,8 +119,72 @@
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
+    color: #acacac;
 }
 
-.profilePic {
-    /* Not sure what to do here yet. */
+.iconsContainer button {
+    padding: 0;
+    height: auto;
+    font-weight: inherit;
+}
+
+.menuButton {
+    background: transparent !important; 
+    padding: 0 !important;
+    height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.menuButton:hover, .menuButton:active, .menuButton:focus {
+    cursor: pointer;
+}
+
+.username {
+    font-weight: 600 !important;
+    color: #acacac !important;
+}
+
+.menuList {
+    background-color: #151414 !important;
+    box-shadow: -6px -4px 6px -1px rgb(86 86 86 / 10%) !important;
+    padding: 0 !important;
+}
+
+.menuItem {
+    background-color: #151414 !important;
+    padding: 0 15px !important;
+    border: none;
+    cursor: pointer;
+}
+
+.menuItem:last-child {
+    margin-bottom: 0 !important;
+}
+
+.menuItem:hover {
+    background-color: #ffffff !important;
+}
+
+.menuItem:active {
+    background-color: #ffffff !important;
+}
+
+.menuItemText {
+    margin-left: 8px !important; 
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+.menuItem svg {
+    color: #acacac !important;
+}
+
+/* Ensure Chakra UI menu components blend with existing styles */
+:global(.chakra-menu__menu-button) {
+    height: auto !important;
+}
+
+:global(.chakra-menu__menuitem) {
+    font-size: 16px !important;
 }
