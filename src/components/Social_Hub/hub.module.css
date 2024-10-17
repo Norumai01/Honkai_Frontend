@@ -8,6 +8,8 @@
     text-align: center;
 }
 
+/* User Profile */
+
 .userprofile {
     background: linear-gradient(to bottom, #000000, #202020);
     width: 100%;
@@ -95,3 +97,5 @@
     font-size: 16px;
     max-width: 400px;
 }
+
+/* Line Seperator */

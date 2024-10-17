@@ -29,7 +29,7 @@ const UserProfile = () => {
                         {user.profilePictureURL ? (
                             <img src={user?.profilePictureURL} alt={`${user?.username}'s profile`} />
                             ) : (
-                            <User size={25} />
+                            <User size={90} />
                         )}
                     </div>
                 </div>
@@ -51,6 +51,9 @@ const UserProfile = () => {
                     {user.bio && <p className={styles.bio}>{user.bio}</p>}
                 </div>
             </div>
+
+            {/* Line Sepertator */}
+            <hr className={styles.divider}/>
         </div>
     );
 }
