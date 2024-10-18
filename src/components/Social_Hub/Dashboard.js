@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./hub.module.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../common/Header";
+import Card from "../PostCards/Card";
+import Footer from "../common/Footer";
 
 const Dashboard = () => {
     // User data is obtained from being stored in localStorage.
@@ -19,12 +21,20 @@ const Dashboard = () => {
     
     return (
         <div className={styles.dashboard}>
-            <Header />
+            <Header className={styles.header} />
 
-            <h1>Welcome to the Dashboard, {user?.username}!</h1>
-            <p>Your email is: {user?.email}</p>
-            <p>Your id is: {user?.id}</p>
-            {/* ... */}
+            {/* Posts */}
+            <main className={styles.main}>
+                <div className={styles.postsContainer}>
+                    {user.posts.map(post => (
+                        <Card post={post} user={user} />
+                    ))}
+                </div>
+            </main>
+
+            <h2>No more posts to load...</h2>
+
+            <Footer className={styles.footer} />
         </div>
     );
 }

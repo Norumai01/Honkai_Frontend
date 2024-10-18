@@ -3,6 +3,8 @@ import styles from "./hub.module.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../common/Header";
 import { User } from 'lucide-react';
+import Card from "../PostCards/Card";
+import Footer from "../common/Footer";
 
 const UserProfile = () => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -54,6 +56,15 @@ const UserProfile = () => {
 
             {/* Line Sepertator */}
             <hr className={styles.divider}/>
+
+            {/* Posts */}
+            <div className={styles.postsContainer}>
+                {user.posts.map(post => (
+                    <Card post={post} user={user} />
+                ))}
+            </div>
+
+            <Footer />
         </div>
     );
 }
