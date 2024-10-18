@@ -2,6 +2,7 @@ import React from "react";
 import AuthPage from "./components/Auth/AuthPage";
 import Dashboard from "./components/Social_Hub/Dashboard";
 import UserProfile from "./components/Social_Hub/UserProfile";
+import CreatePost from "./components/PostCards/CreatePost";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/" element={<PublicRoute> <AuthPage /> </PublicRoute>} />
             <Route path="/dashboard" element={<ProtectedRoute> <Dashboard /> </ProtectedRoute>} />
             <Route path="/profile/:userId" element={<ProtectedRoute> <UserProfile /> </ProtectedRoute>} />
+            <Route path="/create-post" element={<ProtectedRoute> <CreatePost /> </ProtectedRoute>} />
           </Routes>
         </div>
       </Router>

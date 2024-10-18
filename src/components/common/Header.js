@@ -18,6 +18,10 @@ const Header = () => {
     const handleProfileClick = () => {
         navigate(`/profile/${user.id}`);
     }
+
+    const handleCreatePost = () => {
+        navigate(`/create-post`);
+    }
     
     return (
         <header className={styles.header}>
@@ -33,7 +37,7 @@ const Header = () => {
 
             {/* Icons */}
             <div className={styles.iconsContainer}>
-                <SquarePen size={25} className={styles.pen} />
+                <SquarePen size={25} className={styles.pen} onClick={handleCreatePost}/>
                 <Bell size={25} className={styles.bell} />
                 <Menu>
                     <MenuButton as={Button} className={styles.menuButton}>
