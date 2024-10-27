@@ -190,9 +190,10 @@ The application will start on `http://localhost:3000` by default.
 - [x] User profiles
 - [ ] Post search
 - [ ] User search
-- [ ] Post categories
+- [ ] Post categories/tags
+- [ ] Post comments/likes
 - [ ] Direct messaging
-- [ ] Notifications
+- [ ] Live Notifications
 
 ### Performance Optimizations
 - [x] Image optimization
