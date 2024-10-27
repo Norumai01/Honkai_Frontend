@@ -1,70 +1,217 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="src/assets/images/gaming-community-logo.png" alt="Gaming Community Logo" width="150"/>
+  
+  # Honkai Website Frontend
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based frontend application for a social media platform focused on Honkai content. This web application provides user authentication, post management, and social interaction features with a modern, responsive design.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Authentication System
+- User login and registration
+- Protected routes for authenticated users
+- Basic authentication with username/password
+- Session management using localStorage
 
-### `npm start`
+### User Interface
+- Dark theme design
+- Responsive layout
+- Custom navigation header
+- Profile management
+- Image upload capabilities
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Post Management
+- Create, edit, and delete posts
+- Image upload for posts
+- Post feed display
+- Interactive post cards
+- Post metadata display (timestamps, user info)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Social Features
+- User profiles
+- Follow/Unfollow system
+- Post interaction capabilities
+- User statistics display
 
-### `npm test`
+## Tech Stack & Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Core Technologies
+- React 18.3.1
+- React Router Dom 6.27.0
+- Chakra UI 2.10.2
+- Axios 1.7.7
+- Framer Motion 11.11.9
+- Lucide React 0.453.0
 
-### `npm run build`
+### Full Dependencies
+```json
+{
+  "dependencies": {
+    "@chakra-ui/react": "^2.10.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.7",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^11.11.9",
+    "lucide-react": "^0.453.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  }
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
+```
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       ├── game_logo.png
+│   │       └── gaming-community-logo.png
+│   ├── components/
+│   │   ├── Auth/
+│   │   │   ├── AuthPage.js
+│   │   │   ├── AuthPage.module.css
+│   │   │   ├── LoginForm.js
+│   │   │   └── RegisterForm.js
+│   │   ├── common/
+│   │   │   ├── Button.js
+│   │   │   ├── Common.module.css
+│   │   │   ├── Footer.js
+│   │   │   ├── Header.js
+│   │   │   ├── Input.js
+│   │   │   └── Logo.js
+│   │   ├── PostCards/
+│   │   │   ├── Card.js
+│   │   │   ├── CreatePost.js
+│   │   │   ├── Post.module.css
+│   │   │   └── PostCard.module.css
+│   │   └── Social_Hub/
+│   │       ├── Dashboard.js
+│   │       ├── hub.module.css
+│   │       └── UserProfile.js
+│   ├── styles/
+│   │   └── index.css
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup and Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js (v14 or higher recommended)
+- npm (comes with Node.js)
 
-### `npm run eject`
+### Steps
+1. Clone the repository
+```bash
+git clone <repository-url>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install dependencies
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Configure environment variables
+Create a `.env` file in the root directory:
+```env
+REACT_APP_API_URL=http://localhost:8080
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Start the development server
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application will start on `http://localhost:3000` by default.
 
-## Learn More
+### Available Scripts
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from create-react-app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Component Overview
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Authentication Components
+- `AuthPage`: Main authentication page container
+- `LoginForm`: Handles user login
+- `RegisterForm`: Handles new user registration
 
-### Code Splitting
+### Post Components
+- `Card`: Displays individual post with interactions
+- `CreatePost`: Form for creating new posts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Social Components
+- `Dashboard`: Main feed and post display
+- `UserProfile`: User profile page with stats
 
-### Analyzing the Bundle Size
+### Common Components
+- `Header`: Navigation and user controls
+- `Footer`: Standard footer component
+- `Button`: Reusable button component
+- `Input`: Reusable input component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Features To-Do List
 
-### Making a Progressive Web App
+### Authentication Enhancements
+- [x] Basic authentication
+- [x] Protected routes
+- [x] User session management
+- [ ] JWT/OAuth integration
+- [ ] Password reset functionality
+- [ ] Email verification
+- [ ] Remember me functionality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### UI/UX Improvements
+- [ ] Responsive design
+- [x] Dark theme
+- [x] Custom component styling
+- [ ] Loading states
+- [ ] Error handling UI
+- [ ] Infinite scroll
 
-### Advanced Configuration
+### Feature Additions
+- [x] Post creation
+- [x] Image upload
+- [x] User profiles
+- [ ] Post search
+- [ ] User search
+- [ ] Post categories
+- [ ] Direct messaging
+- [ ] Notifications
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Performance Optimizations
+- [x] Image optimization
+- [ ] Lazy loading
+- [ ] Performance monitoring
 
-### Deployment
+### Testing
+- [ ] Unit tests
+- [ ] Component testing
+- [ ] Performance testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Project Status
 
-### `npm run build` fails to minify
+This is an unofficial, non-commercial project. All rights reserved. This code is provided for viewing and educational purposes only. No part of this codebase may be reproduced, distributed, or modified without explicit written permission from the author.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Rights and Usage
+- This is a personal project and is not officially licensed or affiliated with any company
+- The code is shared publicly for portfolio and educational purposes
+- Unauthorized use, modification, or distribution of this code is prohibited
+- For inquiries about using this code, please contact the author directly
+
+© 2024 Johnny Nguyen. All rights reserved.
