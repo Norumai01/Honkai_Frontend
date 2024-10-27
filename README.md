@@ -1,8 +1,8 @@
 <div align="center">
   <img src="src/assets/images/gaming-community-logo.png" alt="Gaming Community Logo" width="150"/>
-  
-  # Honkai Website Frontend
 </div>
+
+# Honkai Website Frontend
 
 A React-based frontend application for a social media platform focused on Honkai content. This web application provides user authentication, post management, and social interaction features with a modern, responsive design.
 
