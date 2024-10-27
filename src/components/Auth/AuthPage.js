@@ -10,6 +10,7 @@ const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const toggleAuthMode = () => setIsLogin(!isLogin);
   const navigate = useNavigate();
+  // TODO: Probably put the apiURL in the app.js in the future.
   const apiUrl = 'http://localhost:8080';
 
   const handleLoginSuccess = (userData) => {
